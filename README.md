@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/roman-feedstock
 
 Home: https://github.com/zopefoundation/roman
 
-Package license: Python-2.0`
+Package license: Python-2.0
 
 Summary: Integer to Roman numerals converter
 
