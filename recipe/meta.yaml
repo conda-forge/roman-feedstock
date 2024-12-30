@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/roman-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/roman-{{ version }}.tar.gz
   sha256: 05f335a1b2b0824f827ed42fff84b35909aab9013799145ed4508bdd4fa3b385
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - roman=roman:main
@@ -19,9 +19,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
     - roman --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/zopefoundation/roman
