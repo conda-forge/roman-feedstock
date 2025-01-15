@@ -1,5 +1,5 @@
 {% set name = "roman" %}
-{% set version = "4.2" %}
+{% set version = "5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/roman-{{ version }}.tar.gz
-  sha256: 05f335a1b2b0824f827ed42fff84b35909aab9013799145ed4508bdd4fa3b385
+  sha256: cb35293c1c4046105fd899194f4f2985f78c955a8b05937f7ab93f3be1660697
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - roman=roman:main
