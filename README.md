@@ -5,13 +5,12 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/roman-feedstock
 
 Home: https://github.com/zopefoundation/roman
 
-Package license: Python-2.0
+Package license: ZPL-2.1
 
 Summary: Integer to Roman numerals converter
 
 roman is a Small helper library to convert arabic to roman numerals.
 There are two ways to use this library: Importing it into your application; and the roman CLI command.
-
 
 Current build status
 ====================

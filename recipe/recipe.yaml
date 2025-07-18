@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: roman
+  version: 5.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/roman-${{ version }}.tar.gz
+  sha256: 3a86572e9bc9183e771769601189e5fa32f1620ffeceebb9eca836affb409986
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - roman=roman:main
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools ==78.1.1
+    - wheel
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - roman
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - roman --help
+
+about:
+  license: ZPL-2.1
+  license_file: LICENSE.txt
+  summary: Integer to Roman numerals converter
+  description: |
+    roman is a Small helper library to convert arabic to roman numerals.
+    There are two ways to use this library: Importing it into your application; and the roman CLI command.
+
+
+  homepage: https://github.com/zopefoundation/roman
+
+extra:
+  recipe-maintainers:
+    - thewchan
