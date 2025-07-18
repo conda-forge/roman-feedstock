@@ -20,7 +20,8 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
+    - setuptools ==78.1.1
+    - wheel
   run:
     - python >={{ python_min }}
 
